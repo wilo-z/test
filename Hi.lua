@@ -90,7 +90,7 @@ local function createEsp(player)
             Color = ESP_SETTINGS.HealthOutlineColor
         }),
         health = create("Line", {
-            Thickness = 1
+            Thickness = 2
         }),
         distance = create("Text", {
             Color = Color3.new(1, 1, 1),
@@ -162,7 +162,7 @@ local function updateEsp()
                         esp.name.Color = ESP_SETTINGS.NameColor
                         
                         esp.healthText.Visible = true
-                        esp.health.Text = string.lower(humanoid.Health, "/".. humanoid.MaxHealth)
+                        esp.healthText.Text = string.lower("["..humanoid.Health, "/".. humanoid.MaxHealth.."]")
                         esp.healthText.Position = Vector2.new(boxSize.X / 2 + boxPosition.X, boxPosition.Y - 25)
                         esp.healthText.Color = ESP_SETTINGS.NameColor
                     else
