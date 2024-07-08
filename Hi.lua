@@ -40,6 +40,7 @@ local ESP_SETTINGS = {
     ShowName = false,
     ShowHealth = false,
     ShowDistance = false,
+    ShowHealthText = false,
     ShowSkeletons = false,
     ShowTracer = false,
     TracerColor = Color3.new(1, 1, 1), 
@@ -87,6 +88,12 @@ local function createEsp(player)
             Thickness = 2
         }),
         distance = create("Text", {
+            Color = Color3.new(1, 1, 1),
+            Size = 12,
+            Outline = true,
+            Center = true
+        }),
+        healthtext = create("Text", {
             Color = Color3.new(1, 1, 1),
             Size = 12,
             Outline = true,
@@ -283,6 +290,14 @@ local function updateEsp()
                         esp.distance.Visible = true
                     else
                         esp.distance.Visible = false
+                    end
+
+                    if ESP_SETTINGS.ShowHealthText and ESP_SETTINGS.Enabled then
+                        esp.healthtext.Text = string.format("["..humanoid.Health.."/"..humanoid.MaxHealth.."]")
+                        esp.healthtext.Position = Vector2.new(boxPosition.X + boxSize.X / 2, boxPosition.Y + boxSize.Y + 15)
+                        esp.healthtext.Visible = true
+                    else
+                        esp.healthtext.Visible = false
                     end
 
                     if ESP_SETTINGS.ShowSkeletons and ESP_SETTINGS.Enabled then
