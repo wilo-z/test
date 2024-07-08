@@ -31,7 +31,7 @@ local ESP_SETTINGS = {
     HealthOutlineColor = Color3.new(0, 0, 0),
     HealthHighColor = Color3.new(0, 1, 0),
     HealthLowColor = Color3.new(1, 0, 0),
-    CharSize = Vector2.new(4, 6),
+    CharSize = Vector2.new(4, 8),
     Teamcheck = false,
     WallCheck = false,
     Enabled = false,
@@ -85,7 +85,7 @@ local function createEsp(player)
             Color = ESP_SETTINGS.HealthOutlineColor
         }),
         health = create("Line", {
-            Thickness = 2
+            Thickness = 3
         }),
         distance = create("Text", {
             Color = Color3.new(1, 1, 1),
@@ -95,7 +95,7 @@ local function createEsp(player)
         }),
         healthtext = create("Text", {
             Color = Color3.new(1, 1, 1),
-            Size = 12,
+            Size = 18,
             Outline = true,
             Center = true
         }),
