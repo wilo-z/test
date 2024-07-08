@@ -95,7 +95,7 @@ local function createEsp(player)
         }),
         healthtext = create("Text", {
             Color = Color3.new(1, 1, 1),
-            Size = 18,
+            Size = 13,
             Outline = true,
             Center = true
         }),
