@@ -95,7 +95,7 @@ local function createEsp(player)
         }),
         healthtext = create("Text", {
             Color = Color3.new(1, 1, 1),
-            Size = 35,
+            Size = 18,
             Outline = true,
             Center = true
         }),
@@ -293,7 +293,7 @@ local function updateEsp()
                     end
 
                     if ESP_SETTINGS.ShowHealthText and ESP_SETTINGS.Enabled then
-                        esp.healthtext.Text = string.format("["..humanoid.Health.."/"..humanoid.MaxHealth.."]")
+                        esp.healthtext.Text = "["..humanoid.Health.."/"..humanoid.MaxHealth.."]"
                         esp.healthtext.Position = Vector2.new(boxPosition.X + boxSize.X / 2, boxPosition.Y + boxSize.Y + 15)
                         esp.healthtext.Visible = true
                     else
